@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-
   LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -33,11 +32,11 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 16.0),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Email',
+                    labelText: 'Username',
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) {
-                    return Validators.emailValidator(value);
+                    return Validators.usernameValidator(value);
                   },
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -48,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) {
-                    return Validators.emailValidator(value);
+                    return Validators.password(value);
                   },
                   obscureText: true,
                 ),

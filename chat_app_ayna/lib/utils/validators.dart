@@ -1,13 +1,10 @@
 class Validators {
-  static String? emailValidator(String? email) {
-    if (email == null || email.isEmpty) {
-      return 'Email cannot be empty';
+  static String? usernameValidator(String? username) {
+    if (username == null || username.isEmpty) {
+      return 'Username cannot be empty';
     }
-    bool emailValid =
-        RegExp(r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$')
-            .hasMatch(email);
-    if (!emailValid) {
-      return 'Please enter a valid email';
+    if (username.length < 8) {
+      return 'Username must be atleast 8 characters';
     }
 
     return null;
